@@ -3,7 +3,7 @@ import numpy as np
 class LightTester:
     """ class of light grid """
     def __init__(self, n):
-        sef.__lightGrid = np.zeros((n,n),dtype=np.bool)
+        self.__lightGrid = np.zeros((n,n),dtype=np.bool)
         
     def apply(self,cmd):
         if cmd[0]=="turn on":

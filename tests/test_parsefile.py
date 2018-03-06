@@ -16,10 +16,10 @@ for str in lines[1:]:
     if match:
         cmd.append([match.group(1),(int(match.group(2)),int(match.group(3))),(int(match.group(4)),int(match.group(5)))]);
     
-print(sizeGrid)
-print(type(sizeGrid))
-print(cmd)
+#print(sizeGrid)
+#print(type(sizeGrid))
+#print(cmd)
 
-print(cmd[0][2])
+#print(cmd[0][2])
     
-print(cmd[0][2][1]) 
+#print(cmd[0][2][1]) 
