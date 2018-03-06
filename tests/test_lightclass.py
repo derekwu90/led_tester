@@ -6,18 +6,16 @@ class LightTester:
         self.__lightGrid = np.zeros((n,n),dtype=np.bool)
         
     def apply(self,cmd):
+        minxindex = np.minimum(cmd[1][0],cmd[2][0])
+        maxxindex = np.maximum(cmd[1][0],cmd[2][0])
+        minyindex = np.minimum(cmd[1][1],cmd[2][1])
+        maxyindex = np.maximum(cmd[1][1],cmd[2][1])
         if cmd[0]=="turn on":
-            for i in range(cmd[1][0],cmd[2][0]+1):
-                for j in range(cmd[1][1],cmd[2][1]+1):
-                    self.__lightGrid[i][j]=True;
+            self.__lightGrid[minxindex:maxxindex+1,minyindex:maxyindex+1]=True;
         elif cmd[0]=="turn off":
-            for i in range(cmd[1][0],cmd[2][0]+1):
-                for j in range(cmd[1][1],cmd[2][1]+1):
-                    self.__lightGrid[i][j]=False;
+            self.__lightGrid[minxindex:maxxindex+1,minyindex:maxyindex+1]=False;
         elif cmd[0]=="switch":
-            for i in range(cmd[1][0],cmd[2][0]+1):
-                for j in range(cmd[1][1],cmd[2][1]+1):
-                    self.__lightGrid[i][j]=  not self.__lightGrid[i][j]
+            self.__lightGrid[minxindex:maxxindex+1,minyindex:maxyindex+1]=np.invert(self.__lightGrid[minxindex:maxxindex+1,minyindex:maxyindex+1]);
     
     def count(self):
         return np.sum(self.__lightGrid)

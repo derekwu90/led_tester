@@ -21,6 +21,8 @@ def setup_package():
     sphinx = ['sphinx'] if needs_sphinx else []
     setup(setup_requires=['pyscaffold>=3.0a0,<3.1a0'] + sphinx,
           entry_points=entry_points,
+          include_package_data = True,
+          zip_safe=False,
           use_pyscaffold=True)
 
 

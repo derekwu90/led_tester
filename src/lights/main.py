@@ -1,8 +1,8 @@
 """ the main function for led tester which could implement from the command prompt."""
 import sys
 import click
-from parsefile import *
-from lightgrid import *
+from . import parsefile
+from . import lightgrid
 
 click.disable_unicode_literals_warning = True
 
@@ -14,10 +14,10 @@ def main(input=None):
     print("input",input)
     
     #get instructions from the file
-    N,instructions = parsefile(input)
+    N,instructions = parsefile.parsefile(input)
     
     #initialize the light grid
-    exampleLightGrid = LightGrid(N)
+    exampleLightGrid = lightgrid.LightGrid(N)
     
     for cmd in instructions:
         #print(cmd)
