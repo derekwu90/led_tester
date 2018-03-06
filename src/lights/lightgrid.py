@@ -1,6 +1,6 @@
 import numpy as np
 
-class LightTester:
+class LightGrid:
     """ class of light grid """
     def __init__(self, n):
         self.__lightGrid = np.zeros((n,n),dtype=np.bool)

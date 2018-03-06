@@ -1,7 +1,7 @@
 """ the main function for led tester which could implement from the command prompt."""
 import sys
 import click
-from paresfile import *
+from parsefile import *
 from lightgrid import *
 
 click.disable_unicode_literals_warning = True
