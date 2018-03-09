@@ -1,0 +1,3 @@
+10
+turn on 11,24 through 12,13
+turn on -12, -14 through -11, 15

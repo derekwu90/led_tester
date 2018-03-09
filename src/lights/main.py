@@ -6,26 +6,32 @@ from . import lightgrid
 
 click.disable_unicode_literals_warning = True
 
+
+
+def creategrid(N, instructions):
+    #initialize the light grid
+    instanceLightGrid = lightgrid.LightGrid(N)
+    
+    for ins in instructions:
+        #print(instanceLightGrid.check_cmd(ins))
+        cmd,coo =instanceLightGrid.check_cmd(ins)
+        instanceLightGrid.apply(cmd,coo)
+    return instanceLightGrid
+
 @click.command()
 @click.option("--input", default=None, help="input URI(file or URL)")
-
 def main(input=None):
     "Console script for led_tester."
     print("input",input)
     
-    #get instructions from the file
     N,instructions = parsefile.parsefile(input)
     
-    #initialize the light grid
-    exampleLightGrid = lightgrid.LightGrid(N)
+    singleGrid = creategrid(N,instructions)
     
-    for cmd in instructions:
-        #print(cmd)
-        exampleLightGrid.apply(cmd)
-    
-    print('#occupied:', exampleLightGrid.count())
+    print('#occupied:', singleGrid.count())
     
     return 0
+    
 
 if __name__=="__main__":
     sys.exit(main())

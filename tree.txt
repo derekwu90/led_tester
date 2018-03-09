@@ -1,0 +1,85 @@
+.
+├── AUTHORS.rst
+├── build
+│   ├── bdist.linux-x86_64
+│   └── lib
+│       └── lights
+│           ├── __init__.py
+│           ├── lightgrid.py
+│           ├── main.py
+│           └── parsefile.py
+├── CHANGELOG.rst
+├── data
+│   ├── test_data1.txt
+│   ├── test_data2.txt
+│   ├── test_data3.txt
+│   └── test_data.txt
+├── dist
+│   ├── lights-0.0.post0.dev10+ga9c3bc8-py3.6.egg
+│   ├── lights-0.0.post0.dev11+gb43d762.dirty-py3.6.egg
+│   ├── lights-0.0.post0.dev9+g0fdaf75.dirty-py3.6.egg
+│   └── lights-0.0.post0.dev9+g0fdaf75-py3.6.egg
+├── docs
+│   ├── authors.rst
+│   ├── changelog.rst
+│   ├── conf.py
+│   ├── index.rst
+│   ├── license.rst
+│   ├── Makefile
+│   └── _static
+├── LICENSE.txt
+├── manualtest
+│   ├── __pycache__
+│   │   ├── test_commandmain.cpython-36-PYTEST.pyc
+│   │   ├── test_lightclass.cpython-36-PYTEST.pyc
+│   │   ├── test_localfile.cpython-36-PYTEST.pyc
+│   │   ├── test_main.cpython-36-PYTEST.pyc
+│   │   ├── test_parsefile.cpython-36-PYTEST.pyc
+│   │   └── test_pytestparse.cpython-36-PYTEST.pyc
+│   ├── test_commandmain.py
+│   ├── test_lightclass.py
+│   ├── test_localfile.py
+│   ├── test_main.py
+│   ├── test_parsefile.py
+│   ├── test_parsefun.py
+│   ├── test_pytestparse.py
+│   └── test.txt
+├── README.md
+├── README.rst
+├── requirements.txt
+├── setup.cfg
+├── setup.py
+├── src
+│   ├── lights
+│   │   ├── __init__.py
+│   │   ├── lightgrid.py
+│   │   ├── main.py
+│   │   ├── parsefile.py
+│   │   └── __pycache__
+│   │       ├── __init__.cpython-36.pyc
+│   │       ├── lightgrid.cpython-36.pyc
+│   │       ├── main.cpython-36.pyc
+│   │       └── parsefile.cpython-36.pyc
+│   └── lights.egg-info
+│       ├── dependency_links.txt
+│       ├── entry_points.txt
+│       ├── not-zip-safe
+│       ├── PKG-INFO
+│       ├── SOURCES.txt
+│       └── top_level.txt
+├── tests
+│   ├── conftest.py
+│   ├── __pycache__
+│   │   ├── conftest.cpython-36-PYTEST.pyc
+│   │   ├── test_lightclass.cpython-36.pyc
+│   │   ├── test_light.cpython-36-PYTEST.pyc
+│   │   ├── test_main.cpython-36.pyc
+│   │   ├── test_parsefile.cpython-36.pyc
+│   │   ├── test_parsefun.cpython-36.pyc
+│   │   ├── test_parsefun.cpython-36-PYTEST.pyc
+│   │   └── test_pytestparse.cpython-36.pyc
+│   ├── test_light.py
+│   └── test_parsefun.py
+└── tree.txt
+
+16 directories, 66 files

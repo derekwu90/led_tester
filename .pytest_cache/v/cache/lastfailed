@@ -1,0 +1,13 @@
+{
+  "tests/manualtest/test_commandmain.py": true,
+  "tests/manualtest/test_main.py": true,
+  "tests/manualtest/test_parsefile.py": true,
+  "tests/manualtest/test_parsefun.py": true,
+  "tests/manualtest/test_pytestparse.py": true,
+  "tests/test_light.py::test_data": true,
+  "tests/test_light.py::test_data1": true,
+  "tests/test_light.py::test_data2": true,
+  "tests/test_light.py::test_data3": true,
+  "tests/test_light.py::test_fib": true,
+  "tests/test_parsefun.py::test_fib": true
+}

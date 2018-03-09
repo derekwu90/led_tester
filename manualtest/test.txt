@@ -1,0 +1,7 @@
+10
+switch 5,5 through 12,13
+switch 12,15 through 18,19
+switch -1,-100 through 3,5
+switch 5,15 through 6,11
+
+

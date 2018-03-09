@@ -1,43 +1,16 @@
-import re
-import urllib.request
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-def checkurl(url):
-    match = re.search(r'\s*http://.*txt',url)
-    if match:
-        req = urllib.request.Request(match.group())
-        with urllib.request.urlopen(req) as open_file:
-            lines = open_file.readlines()
-    else:
-        with open(url) as open_file:
-            lines = open_file.readlines()
-    return lines
+import pytest
+from lights.parsefile import parsefile
+
+__author__ = "derekwu90"
+__copyright__ = "derekwu90"
+__license__ = "mit"
 
 
-def parsefile(url):
-    
-    lines = checkurl(url)
-# line1 store the size of grid.
-    sizeGrid = int(lines[0])
-
-# get cmd from each line
-    cmd=[]
-    
-    for line in lines[1:]:
-        if not isinstance(line,str):
-            line = line.decode()
-        #print(line)
-        match = re.search('.*(turn on|turn off|switch)\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*through\s*([+-]?\d+)\s*,\s*([+-]?\d+).*',line)
-        if match:
-            cmd.append([match.group(1),(int(match.group(2)),int(match.group(3))),(int(match.group(4)),int(match.group(5)))])
-    return sizeGrid, cmd
-
-
-def main():
-    url = "../data/test_data.txt"
-    url="http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3.txt"
-    s,cmd = parsefile(url)
-    print(s)
-    print(cmd)
-
-if __name__ == "__main__":
-    main()
+def test_fib():
+    localfile="/home/wu/comp30670/assignment3/lights/data/test_data.txt"
+    assert parsefile(localfile) == (10,[['turn on', (0, 0), (9, 9)], ['turn off', (0, 0), (9, 9)], ['switch', (0, 0), (9, 9)], ['turn off', (0, 0), (9, 9)], ['turn on', (2, 2), (7, 7)]])
+    with pytest.raises(AssertionError, message="Excepting an error, there is no error here"):
+        parsefile(localfile)
