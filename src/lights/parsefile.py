@@ -1,16 +1,28 @@
+import sys
 import re
 import urllib.request
 
 def checkurl(url):
     match = re.search(r'\s*http://.*txt',str(url))
     if match:
-        req = urllib.request.Request(match.group())
-        with urllib.request.urlopen(req) as open_file:
-            lines = open_file.readlines()
+        try:
+            req = urllib.request.Request(match.group())
+            with urllib.request.urlopen(req) as open_file:
+                lines = open_file.readlines()
+                return lines
+        except urllib.error.HTTPError:
+            print("Oops, can not find your files online.")
+            sys.exit(1)
     else:
-        with open(url) as open_file:
-            lines = open_file.readlines()
-    return lines
+        try:
+            with open(url) as open_file:
+                lines = open_file.readlines()
+                return lines
+        except FileNotFoundError:
+            print("Oops! Can not find your file, Please check again.")
+            sys.exit(1)
+
+
 
 
 def parsefile(url):

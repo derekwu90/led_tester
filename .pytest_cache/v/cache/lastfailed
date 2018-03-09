@@ -9,5 +9,9 @@
   "tests/test_light.py::test_data2": true,
   "tests/test_light.py::test_data3": true,
   "tests/test_light.py::test_fib": true,
-  "tests/test_parsefun.py::test_fib": true
+  "tests/test_parsefun.py::test_fib": true,
+  "tests/test_parsefun.py::test_httpfile": true,
+  "tests/test_parsefun.py::test_httpfile1": true,
+  "tests/test_parsefun.py::test_localfile": true,
+  "tests/test_parsefun.py::test_localfile1": true
 }
